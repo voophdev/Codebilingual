@@ -1,2 +1,4 @@
 .venv/
 env/
+Codebilingual/static/js/translator/scripts/variables/variables.js
+Codebilingual/db.sqlite3
