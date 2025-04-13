@@ -1,0 +1,304 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <h1>{{ lesson.title }}</h1>
+  <br>
+  <p>{{ lesson.description }}</p>
+  <ol>
+    <li>
+      <strong>if Statement:</strong> Executes a block of code if a specified condition is true.
+    </li>
+    <li>
+      <strong>else if Statement:</strong> Executes a block of code if the preceding if condition is false and the current condition is true.
+    </li>
+    <li>
+      <strong>else Statement:</strong> Executes a block of code if none of the preceding conditions are true.
+    </li>
+  </ol>
+{% endblock %}
+
+{% block content %}
+      <div class="second-container">
+        <pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+int main() {
+    int number = 10;
+
+    // Else if statement
+    if (number > 15) {
+        std::cout << "The number is greater than 15" << std::endl;
+    } else if (number > 5) {
+        std::cout << "The number is greater than 5 but less than or equal to 15" << std::endl;
+    } else {
+        std::cout << "The number is less than or equal to 5" << std::endl;
+    }
+
+    return 0;
+}</code></pre>
+
+        <p>
+          In this example, we have an <strong>int</strong> variable <strong>number</strong> initialized with the value <strong>10</strong>. We use an <strong>if</strong> statement to check three conditions sequentially:
+        </p>
+
+        <ol>
+          <li>
+            The first <strong>if</strong> statement checks if <strong>number</strong> is greater than <strong>15</strong>. Since <strong>number</strong> is not greater than <strong>15</strong>, this condition is false, and the associated code block is not executed.
+          </li>
+          <li>
+            The <strong>else if</strong> statement checks if <strong>number</strong> is greater than <strong>5</strong>. Since <strong>number</strong>> is indeed greater than <strong>5</strong>, but not greater than <strong>15</strong>, this condition is true. Therefore, the code block associated with this <strong>else if</strong> statement is executed, printing "The number is greater than 5 but less than or equal to 15" to the console.
+          </li>
+          <li>
+            Since the conditions in the preceding <strong>if</strong> and <strong>else if</strong> statements are false, the <strong>else</strong> statement's code block is not executed.
+          </li>
+        </ol>
+        
+        <p>
+          This demonstrates how <strong>else if</strong> statements provide an alternative condition to check if the preceding condition is false, allowing for multiple conditions to be evaluated in sequence.
+        </p>
+      </div>
+
+      <div class="second-container">
+        <h1>Comparison Operators</h1>
+        <table border="1">
+          <tr>
+            <th>Operator</th>
+            <th>Meaning</th>
+            <th>Example</th>
+          </tr>
+          <tr>
+            <td>==</td>
+            <td>Equal to</td>
+            <td><code>a == b</code></td>
+          </tr>
+          <tr>
+            <td>!=</td>
+            <td>Not equal to</td>
+            <td><code>a != b</code></td>
+          </tr>
+          <tr>
+            <td>&lt;</td>
+            <td>Less than</td>
+            <td><code>a &lt; b</code></td>
+          </tr>
+          <tr>
+            <td>&gt;</td>
+            <td>Greater than</td>
+            <td><code>a &gt; b</code></td>
+          </tr>
+          <tr>
+            <td>&lt;=</td>
+            <td>Less than or equal to</td>
+            <td><code>a &lt;= b</code></td>
+          </tr>
+          <tr>
+            <td>&gt;=</td>
+            <td>Greater than or equal to</td>
+            <td><code>a &gt;= b</code></td>
+          </tr>
+        </table>
+        <ol>
+          <li>
+            <h3>Equal to (==)</h3>
+            <div class="code-container">
+              <div class="code-input">
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int a = 5, b = 3;
+
+    // Equal to (==)
+    if (a == b) {
+        std::cout << "a is equal to b" << std::endl;
+    } else {
+        std::cout << "a is not equal to b" << std::endl;
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+              <div class="code-output">
+<pre class="lang-"><code class="lang-">Output: 
+
+a is not equal to b
+</code></pre>
+              </div>
+            </div>
+
+          <p>
+            Since the assigned value to <strong>a</strong> (5) is not equal to the assigned value to <strong>b</strong> (3), the condition <strong>a == b</strong> evaluates to false.
+          </p>
+
+          </li>
+          <li>
+            <h3>Not equal to (!=)</h3>
+            <div class="code-container">
+              <div class="code-input">
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int a = 5, b = 3;
+
+    // Not equal to (!=)
+    if (a != b) {
+        std::cout << "a is not equal to b" << std::endl;
+    } else {
+        std::cout << "a is equal to b" << std::endl;
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+              <div class="code-output">
+<pre class="lang-"><code class="lang-">Output: 
+
+a is not equal to b
+</code></pre>
+              </div>
+            </div>
+          <p>
+            Since the assigned value to <strong>a</strong> (5) is not equal to the assigned value to <strong>b</strong> (3), the condition <strong>a != b </strong>evaluates to true.
+          </p>
+          </li>
+          <li>
+            <h3>Less than (<)</h3>
+            <div class="code-container">
+              <div class="code-input">
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int a = 5, b = 3;
+
+    // Less than (<)
+    if (a < b) {
+        std::cout << "a is less than b" << std::endl;
+    } else {
+        std::cout << "a is not less than b" << std::endl;
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+              <div class="code-output">
+<pre class="lang-"><code class="lang-">Output:
+
+a is not less than b</code></pre>
+              </div>
+            </div>
+          <p>
+            Since the assigned value to <strong>a</strong> (5) is not less than the assigned value to <strong>b</strong> (3), the condition <strong>a < b </strong>evaluates to false.
+          </p>
+          </li>
+          <li>
+            <h3>Greater than (>)</h3>
+            <div class="code-container">
+              <div class="code-input">
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int a = 5, b = 3;
+
+    // Greater than (>)
+    if (a > b) {
+        std::cout << "a is greater than b" << std::endl;
+    } else {
+        std::cout << "a is not greater than b" << std::endl;
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+              <div class="code-output">
+<pre class="lang-"><code class="lang-">Output:
+
+a is greater than b</code></pre>
+              </div>
+            </div>
+          <p>
+            Since the assigned value to <strong>a</strong> (5) is greater than the assigned value to <strong>b</strong> (3), the condition <strong>a > b </strong>evaluates to true.
+          </p>
+          </li>
+          <li>
+            <h3>Less than or equal to (<=)</h3>
+            <div class="code-container">
+              <div class="code-input">
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int a = 5, b = 3;
+
+    // Less than or equal to (<=)
+    if (a <= b) {
+        std::cout << "a is less than or equal to b" << std::endl;
+    } else {
+        std::cout << "a is not less than or equal to b" << std::endl;
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+              <div class="code-output">
+<pre class="lang-"><code class="lang-">Output:
+
+a is not less than or equal to b</code></pre>
+              </div>
+            </div>
+          <p>
+            Since the assigned value to <strong>a</strong> (5) is not less than or equal to the assigned value to <strong>b</strong> (3), the condition <strong>a <= b </strong>evaluates to false.
+          </p>
+          </li>
+                    <li>
+            <h3>Greater than or equal to (>=)</h3>
+            <div class="code-container">
+              <div class="code-input">
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int a = 5, b = 3;
+
+    // Greater than or equal to (>=)
+    if (a >= b) {
+        std::cout << "a is greater than or equal to b" << std::endl;
+    } else {
+        std::cout << "a is not greater than or equal to b" << std::endl;
+    }
+
+    return 0;
+}</code></pre>
+              </div>
+              <div class="code-output">
+<pre class="lang-"><code class="lang-">Output:
+
+a is greater than or equal to b</code></pre>
+              </div>
+            </div>
+          <p>
+            Since the assigned value to <strong>a</strong> (5) is greater than or equal to the assigned value to <strong>b</strong> (3), the condition <strong>a <=  b </strong>evaluates to true.
+          </p>
+          </li>
+        </ol>
+        <p>
+          <strong>NOTE:</strong> C++ conditional statements use parentheses <code>()</code> around complex conditions to improve readability and avoid operator precedence issues.
+        </p>
+      </div>
+
+  <div class="button-holder">
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Finish</button>
+    </form>
+  </div>
+{% endblock %}
+           

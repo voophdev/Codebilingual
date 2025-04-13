@@ -1,0 +1,38 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block title %}
+  Quizzes
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/student/student_home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+  <div class="secondary-container">
+    <div class="select-lesson-container">
+    <h1>Select Quiz</h1>
+
+    <div class="lesson-container">
+    
+      <a href="{% url 'quizzes:cpp_quiz_list' %}">
+      <div class="cpp-container">
+        <div class="text-container">
+          <p>C++</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="{% url 'quizzes:python_quiz_list' %}">
+      <div class="python-container">
+        <div class="text-container">
+          <p>Python</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  </div>
+</div>
+{% endblock %}

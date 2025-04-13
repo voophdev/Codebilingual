@@ -1,0 +1,40 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/py/lesson.css' %}">
+  <script src="{% static 'js/data/operators.js' %}" defer></script>
+  <script src="{% static 'js/view/operators.js' %}" defer></script>
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>In Python, operators are symbols or special keywords used to perform operations on variables and values. Python provides various types of operators, including arithmetic operators, comparison operators, logical operators, assignment operators, and more. These operators allow you to manipulate data and control the flow of your program efficiently. </p>
+{% endblock %}
+
+{% block content %}
+<div class="js-second-container">
+</div>
+
+<div class="note-container">
+  <p>
+    <strong>NOTE:</strong> Understanding and mastering these operators is fundamental to writing efficient and effective Python code. They allow you to perform a wide range of operations, from basic arithmetic to complex logical evaluations.
+  </p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

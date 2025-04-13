@@ -1,0 +1,221 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>Creating a String</h1>
+  <pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+  // Using string literals
+  std::string greeting = "Hello, World!";
+  
+  // Using string constructor
+  std::string name("Alice");
+  
+  // Initializing an empty string
+  std::string emptyString;
+  
+  std::cout << greeting << std::endl;
+  std::cout << "My name is " << name << std::endl;
+  std::cout << "Empty string: " << emptyString << std::endl;
+  
+  return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lang-">Output:
+
+Hello, World!
+My name is Alice
+Empty string:</code></pre>
+  <p>As seen in the code provided, there are different methods of creating strings:</p>
+  <ol>
+    <li>
+      <h3>Using String Literals</h3>
+      <p>The <strong>greeting</strong> variable is initialized with the string literal <strong>"Hello, World!"</strong>. String literals are sequences of sentences enclosed in double quotes. In this case, <strong>"Hello, World"</strong>is assigned to the <strong>greeting</strong> variable.</p>
+    </li>
+    <li>
+      <h3>Using String Constructor</h3>
+      <p>The <strong>name</strong> variable is created using the constructor of <strong>std::string</strong>. The constructor is invoked with the argument <strong>"Alice"</strong>, initializing the <strong>name</strong>variable with the string <strong>"Alice"</strong>.</p>
+    </li>
+    <li>
+      <h3>Initializing an Empty String</h3>
+      <p>The <strong>emptyString</strong> variable is declared without initialization. Since no value is assigned to it, it is an empty string by default.</p>
+    </li>
+  </ol>
+</div>
+      
+<div class="second-container">
+  <h1>String Concatenation</h1>
+  <p>The process of combining two or more strings together to form a single string.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::string first = "Hello";
+    std::string second = " World!";
+    
+    std::string combined = first + second;
+    
+    std::cout << "Combined string: " << combined << std::endl;
+    
+    return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lang-">Output:
+
+Combined string: Hello World!</code></pre>
+  <p>As seen in the code provided, there are different methods of creating strings:</p>
+  <ol>
+    <li>
+      <h3>String Variables</h3>
+      <p>Two <strong>std::string</strong> variabless<strong>first</strong> and <strong>second</strong> are declared and initialized with the strings <strong>"Hello"</strong> and <strong>"World!"</strong>.</p>
+    </li>
+    <li>
+      <h3>Concatenation</h3>
+      <p>The <cstrong>+</strong> operator is used to concatenate the strings <strong>first</strong> and <strong>second</strong>, and the result is stored in the <strong>combined</strong> variable.
+      </p>
+    </li>
+  </ol>
+</div>
+
+<div class="second-container">
+  <h1>Accessing a String</h1>
+  <p>Accessing a string means retrieving or modifying individual characters or substrings within the string. This allows for manipulation and analysis of the text stored in the string object.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::string greeting = "Hello, World!";
+
+    // Accessing individual characters
+    char firstChar = greeting[0]; // Accessing the first character
+    char fifthChar = greeting[4]; // Accessing the fifth character
+
+    std::cout << "First character: " << firstChar << std::endl;
+    std::cout << "Fifth character: " << fifthChar << std::endl;
+
+    // Modifying a character
+    greeting[7] = 'w'; // Changing 'W' to 'w'
+
+    std::cout << "Modified string: " << greeting << std::endl;
+
+    return 0;
+}</code></pre>
+  <p>The provided C++ code demonstrates accessing and modifying individual characters within a string:</p>
+  <ol>
+    <li>
+      <h3>Accessing Individual Characters</h3>
+      <ul>
+        <li>Characters in a string can be accessed using square brackets <strong>[ ]</strong> with the index of the character you want to access.</li>
+        <li>For example, <strong>greeting[0]</strong> retrieves the first character of the string <strong>greeting</strong>, and <strong>greeting[4]</strong> retrieves the fifth character.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Modifying a character</h3>
+      <ul>
+        <li>
+          Similarly, characters within a string can be modified by assigning a new value to the indexed location.
+        </li>
+        <li>
+          In the code, <strong>greeting[7]</strong> (which originally contains <strong>'W'</strong>) is modified to <strong>'w'</strong> by assigning <strong>'w'</strong> to it.
+        </li>
+      </ul>
+    </li>
+  </ol>
+<pre class="lang-"><code class="lanng-">Output: 
+First character: H
+Fifth character: o
+Modified string: Hello, world!
+</code></pre>
+  <ul>
+    <li>
+      The program outputs the first and fifth characters retrieved from the string <strong>greeting</strong>.
+    </li>
+    <li>
+      It also prints the modified string after changing the seventh character to <strong>'w'</strong>.
+    </li>
+  </ul>
+  <p>
+    In summary, the code showcases how to access and modify individual characters within a C++ string, offering insight into the fundamental operations for string manipulation.
+  </p>
+</div>
+
+<div class="second-container">
+  <h1>Escape Characters</h1>
+  <p>In C and C++, escape characters are special sequences of characters used to represent certain non-printable or special characters within strings or character literals. These sequences start with a backslash \ followed by a specific character or sequence of characters.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+  
+    std::cout << "Hello, World!\n";
+    std::cout << "This is a new line.\n";
+    std::cout << "This \t is \t a \t tab \t separated \t line.\n";
+    std::cout << "Backspace\b character removes the previous character.\n";
+    std::cout << "Carriage return \r moves the cursor to the beginning of the line.\n";
+    
+    return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lanng-">Output:
+
+Hello, World!
+This is a new line.
+This     is       a        tab      separated        line.
+Backspace character removes the previous character.
+Carriage return  moves the cursor to the beginning of the line. 
+</code></pre>
+  <br>
+  <h1>Escape Sequence Table</h1>
+  <br>
+  <table>
+    <tr>
+      <th>Escape Sequence</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>'\n'</td>
+      <td>Inserts a newline</td>
+    </tr>
+    <tr>
+      <td>'\t'</td>
+      <td>Inserts a tab</td>
+    </tr>
+    <tr>
+      <td>'\b'</td>
+      <td>Backspace character, removes the previous character</td>
+    </tr>
+    <tr>
+      <td>'\r'</td>
+      <td>Carriage return character, moves the cursor to the beginning of the line</td>
+    </tr>
+  </table>
+  <p><strong>NOTE:</strong> Escape characters in C++ serve the vital purpose of representing non-printable or special characters within strings and character literals.These escape sequences significantly enhance the flexibility and precision of string manipulation in C++ programming.</p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

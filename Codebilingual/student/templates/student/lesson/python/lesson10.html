@@ -1,0 +1,180 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/py/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>Looping in Python refers to the process of repeatedly executing a block of code multiple times. They enable efficient and organized handling of tasks that need to be performed repeatedly. Loops help streamline code by reducing redundancy and improving readability.</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>while loop</h1>
+  <p>
+    In Python, a while loop is a control flow statement that repeatedly executes a block of code as long as a specified condition is true. It continues iterating until the condition becomes false. While loops are useful when you want to execute a block of code repeatedly based on some condition.
+  </p>
+  <p>
+    The syntax of a while loop in Python is as follows:
+  </p>
+<pre class="lang-python"><code class="lang-python">while condition
+# Code block to be executed repeatedly</code></pre>
+  <p>
+    Here's an explanation of each part of the while loop:
+  </p>
+  <ol>
+    <li><strong>while:</strong> The keyword <code>while</code> initiates the loop.</li>
+    <li><strong>condition:</strong> This is the expression that is evaluated before each iteration of the loop. If the condition evaluates to <code>true</code>, the loop body is executed. If it evaluates to <code>false</code>, the loop terminates, and program execution continues after the loop.</li>
+    <li><strong>Code block:</strong> This is the block of code that is executed repeatedly as long as the condition remains <code>true</code>. It is indented to indicate that it belongs to the <code>while</code> loop.</li>
+  </ol>
+
+  <p>
+    Here's a simple example of a while loop in Python:
+  </p>
+
+<pre class="lang-python"><code class="lang-python"># Initialize a counter
+counter = 0
+
+# While loop with a condition
+while counter < 5:
+print("Counter:", counter)
+counter += 1
+</code></pre>
+  <p>
+    Let's break it down:
+  </p>
+  <ol>
+    <li>
+      <strong>Initialize a counter:</strong> This line initializes a counter variable with a value of 0.
+    </li>
+    <li>
+      <strong>Start of the while loop:</strong> This section indicates the beginning of the while loop block.
+    </li>
+    <li>
+      <strong>Condition:</strong> The <code>while</code> keyword is followed by a condition that is checked before each iteration of the loop. If the condition evaluates to <code>true</code>, the loop body is executed. If it evaluates to <code>false</code>, the loop terminates.
+    </li>
+    <li>
+      <strong>Loop Body:</strong> This is the block of code inside the <code>while</code> loop that gets executed repeatedly as long as the condition remains <code>true</code>. In this example, it prints the current value of the counter and then increments it by 1.
+    </li>
+    <li>
+      <strong>Increment the counter:</strong> The counter variable is incremented by 1 after each iteration of the loop.
+    </li>
+    <li>
+      <strong>End of the while loop:</strong> This section indicates the end of the while loop block.
+    </li>
+  </ol>
+
+<pre class="lang-"><code class="lang-">Output:
+
+Counter: 0
+Counter: 1
+Counter: 2
+Counter: 3
+Counter: 4
+</code></pre>
+
+</div>
+
+<div class="second-container">
+  <h1>Loop with User Input</h1>
+  <p>An example of while loop that asks the user to enter a number and then prints its multiplication table.
+  </p>
+<pre class="lang-python"><code class="lang-python"># Ask user to enter a number, then print its multiplication table using a while loop
+
+num = int(input("Enter a number: "))
+i = 1
+while i <= 10:
+print(num, "x", i, "=", num * i)
+i += 1
+</code></pre>
+
+<pre class="lang-"><code class="lang-">Output:
+
+Enter a number: 5 (the number 5 is inputted by the user)
+5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50</code></pre>
+</div>
+
+<div class="second-container">
+  <h1>Infinite Loop with Break Statement</h1>
+  <p>
+    Like all loops, infinite loops can be exited prematurely using the break and exit statements.
+  </p>
+<pre class="lang-python"><code class="lang-python"># Count from 1 to 10 but break the loop when the number becomes 5
+
+num = 1
+while True:
+print(num)
+if num == 5:
+  break
+num += 1</code></pre>
+
+<pre class="lang-"><code class="lang-">Output:
+
+1
+2
+3
+4
+5</code></pre>
+</div>
+
+<div class="second-container">
+  <h1>While Loop with Else Block</h1>
+  <p>
+    A while loop example that checks if a number is prime and uses an else block to handle the case when the loop completes without encountering a break statement.
+  </p>
+<pre class="lang-python"><code class="lang-python"># Check if a number is prime using a while loop with an else block
+
+num = int(input("Enter a number: "))
+i = 2
+while i < num:
+if num % i == 0:
+  print(num, "is not a prime number.")
+  break
+i += 1
+else:
+print(num, "is a prime number.")</code></pre>
+
+<pre class="lang-"><code class="lang-">Output:
+
+Enter a number: 7 (the number 7 is inputted by the user) 
+7 is a prime number.</code></pre>
+  <p>Explanation:</p>
+
+  <p>
+    This code checks if a given number (<code>num</code>) is prime or not. It iterates through numbers from 2 to <code>num – 1</code> (excluding <code>num</code> itself) and checks if <code>num</code> is divisible by any of these numbers. If it finds a divisor, it prints that <code>num</code> is not a prime number and breaks out of the loop. If no divisors are found, it prints that <code>num</code> is a prime number.
+  </p>
+</div>
+
+<div class="note-container">
+  <p>
+    <strong>NOTE:</strong> While loops offer a flexible way to repeat a block of code in Python until a certain condition is met, making them essential for tasks like iterative processing, user input validation, and creating infinite loops with break conditions.
+  </p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

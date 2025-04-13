@@ -1,0 +1,71 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/py/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>In Python, the math module provides access to various mathematical functions and constants for performing mathematical operations. These functions cover a wide range of mathematical operations, including basic arithmetic, trigonometry, logarithms, exponentiation, and more.</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>Boolean Variables</h1>
+  <pre class="lang-python"><code class="lang-python">#Boolean variable assignment
+is_sunny = True
+is_raining = False
+
+print(is_sunny)     # Output: True
+print(is_raining)   # Output: False</code></pre>
+</div>
+
+<div class="second-container">
+  <h1>Boolean Operations</h1>
+  <p>
+    Boolean operations allow combining boolean values using logical <code>AND</code>, <code>OR</code>, and <code>NOT</code>.
+  </p>
+<pre class="lang-python"><code class="lang-python">#Boolean operations
+
+sunny = True
+raining = False
+
+# Logical AND operation
+is_good_weather = sunny and not raining
+print(is_good_weather)   # Output: True
+
+# Logical OR operation
+is_any_weather = sunny or raining
+print(is_any_weather)    # Output: True</code></pre>
+
+  <p>Here's the breakdown of the code:</p>
+  <ul>
+    <li>
+      <p><code>is_good_weather</code> checks if it's sunny and not raining. Since it's sunny (<code>sunny</code> is <code>True</code>) and not raining (<code>not raining</code> is also <code>True</code>), the result is <code>True</code>.</p>
+    </li>
+    <li>
+      <p><code>is_any_weather</code> checks if it's either sunny or raining. Since it's sunny (<code>sunny</code> is <code>True</code>), the result is <code>True</code> because at least one of them (<code>sunny</code>) is <code>True</code>.</p>
+    </li>
+    <li>
+      <p>So both outputs are <code>True</code>, indicating that it's good weather and there's some kind of weather (either sunny or raining).</p>
+    </li>
+  </ul>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

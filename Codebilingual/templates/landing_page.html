@@ -1,0 +1,79 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+  CodeBilingual
+{% endblock %}
+{% block headimage %}
+  <img src="{% static 'img/image1.jpeg' %}" alt="top-photo" class="top-photo">
+{% endblock %}
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/landing-page.css' %}">
+{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-one-container">
+    <h1>Translate and Learn C++ and Python Code</h1>
+    <h2>Translate code between C++ and Python, learn both programming languages through Web Lessons, and test your learning with tasks.</h2>
+    <a href="{% url 'users:signup' %}"><button>Signup now</button></a>
+
+    <div class="testimonial-container">
+      <p>"Codebilingual made it easy to translate my code from C++ to Python. Highly recommended!"</p>
+      <p class="testimonial-name">-O'Donnell Tomagan</p>
+    </div>
+  </div>
+
+  <div class="hero-two">
+    <div class="upper-div">
+      <h1>Translate and Learn C++ and Python Code</h1>
+      <h2>Translate code between C++ and Python, learn both programming languages through Web Lessons, and test your learning with tasks.</h2>
+    </div>
+
+    <div class="grid-container">
+
+      <div class="image-container">
+        <img src="{% static 'img/image2.jpeg' %}" class="second-image">
+      </div>
+
+      <div class="description-one">
+        <h1>Easy code translation</h1>
+        <p>Codebilingual provides a seamless translation experience between C++ and Python, allowing you to easily convert your code from one language to another.</p>
+      </div>
+
+      <div class="description-two">
+        <h1>Learn two programming languages</h1>
+        <p>With Codebilingual's Web Lessons, you can learn both C++ and Python programming languages at your own pace. Gain valuable skills and expand your coding knowledge.</p>
+      </div>
+
+      <div class="image-container">
+        <img src="{% static 'img/image3.jpeg' %}" class="third-image">
+      </div>
+
+      <div class="image-container">
+        <img src="{% static 'img/image4.jpeg' %}" class="fourth-image">
+      </div>
+      
+      <div class="description-three">
+        <h1>Test your learning with tasks</h1>
+        <p>Put your coding skills to the test with Codebilingual's tasks. Practice what you've learned and improve your programming abilities.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-three">
+    <div class="content">
+      <h1>"Codebilingual helped me learn both C++ and Python in a fun and interactive way."</h1>
+      <p>-Maxinne Nico</p>
+    </div>
+  </div>
+    
+  <div class="hero-four">
+    <div class="left-box"></div>
+    <div class="middle-box">
+      <h1>Start Coding Now<span>.</span></h1>
+      <p class="review">“Codebilingual is an amazing platform for code translation and learning programming languages. I'm impressed with the quality of the lessons and tasks.” -Angel Musni</p>
+      <p></p>
+      <a href="{% url 'users:signup' %}"><button>Signup now</button></a>
+    </div>
+  </div>
+</section>
+{% endblock %}

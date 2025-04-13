@@ -1,0 +1,52 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ quiz.title }}: {{ quiz.description }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/quizzes/py/quiz.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+  <div class="secondary-container">
+    <div class="container">
+      <div class="quiz-container">
+        <div class="back-container">
+          <a 
+            href="
+            {% if quiz_type == 'cpp' %}
+            {% url 'quizzes:cpp_quiz_list' %}
+            {% elif quiz_type == 'py' %}
+            {% url 'quizzes:python_quiz_list' %}
+            {% endif %}
+          ">
+            <i class="fa-solid fa-arrow-left-long"></i>
+          </a>
+        </div>
+        <div class="title-container">
+          <h1>{{ quiz.title }}: {{ quiz.description }}</h1>
+        </div>
+        <form method="post">
+          {% csrf_token %}
+          <ol>
+              {% for field in form %} 
+              <li>
+                  <p>{{ field.label }}</p>
+                  {% for choice in field %}
+                  <label>{{ choice.tag }} {{ choice.choice_label }}</label>
+                  {% endfor %}
+              </li>
+              {% endfor %}
+          </ol>
+          <div class="button-container">
+              <input class="submit-button" type="submit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

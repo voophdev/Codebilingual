@@ -1,0 +1,66 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/py/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>Single-Line Comments:</h1>
+  <p>
+    Single-line comments start with the <code>#</code> symbol and continue until the end of the line. They are often used for brief explanations or annotations.
+  </p>
+
+<pre class="lang-python"><code class="lang-python">#This is a single-line comment
+
+print("Hello, World!")  #This comment follows a statement</code></pre>
+
+<pre class="lang-"><code class="lang-">OUTPUT:
+
+Hello, World!</code></pre>
+</div>
+
+<div class="second-container">
+  <h1>Multi-Line Comments:</h1>
+  <p>
+    Multi-line comments are enclosed within triple quotes (<code>"""</code> or <code>'''</code>). While Python doesn't have a specific syntax for multi-line comments, using triple quotes for string literals effectively serves as a way to include multi-line comments.
+  </p>
+
+<pre class="lang-python"><code class="lang-python">"""
+This is a multi-line comment.
+It spans multiple lines.
+This is useful for longer explanations.
+"""
+
+print("Hello, World!")</code></pre>
+
+<pre class="lang-"><code class="lang-">OUTPUT:
+
+Hello, World!</code></pre>
+  <p>
+    <strong>NOTE:</strong> Python comments play a crucial role in enhancing code readability, documenting functionality, and facilitating collaboration among developers. They are an essential tool for writing clean and understandable code.
+  </p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

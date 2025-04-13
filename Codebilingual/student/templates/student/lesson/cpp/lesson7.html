@@ -1,0 +1,86 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>C++ Booleans</h1>
+  <pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+int main() {
+    bool isRaining = true;
+    bool isSunny = false;
+
+    // Check if it's raining
+    if (isRaining) {
+        std::cout << "Bring an umbrella!" << std::endl;
+    } else {
+        std::cout << "No need for an umbrella." << std::endl;
+    }
+
+    // Check if it's sunny
+    if (isSunny) {
+        std::cout << "Enjoy the sunshine!" << std::endl;
+    } else {
+        std::cout << "It's not sunny right now." << std::endl;
+    }
+
+    return 0;
+}</code></pre>
+
+  <ul>
+    <li>
+      Two boolean variables <strong>isRaining</strong> and <strong>isSunny</strong> are declared and initialized with the values <strong>true</strong> and <strong>false</strong> respectively.
+    </li>
+    <li>
+      The program then uses these boolean values in conditional statements to make decisions.
+    </li>
+    <li>
+      In the first <strong>if</strong> statement, it checks if it's raining <strong>(isRaining)</strong>. If it is, it advises to bring an umbrella; otherwise, it indicates no need for an umbrella.
+    </li>
+    <li>
+      In the second <strong>if</strong> statement, it checks if it's sunny (<strong>isSunny</strong>). If it is, it suggests enjoying the sunshine; otherwise, it states that it's not sunny right now.
+    </li>
+  </ul>
+     
+<pre class="lang-"><code class="lang-">Output: 
+
+Bring an umbrella!
+It's not sunny right now.</code></pre>
+
+  <ul>
+    <li>
+      For the first condition <strong>(isRaining)</strong>, since <strong>isRaining</strong> is <strong>true</strong>, the program prints "Bring an umbrella!".
+    </li>
+    <li>
+      For the second condition <strong>(isSunny)</strong>, since <strong>isSunny</strong> is <strong>false</strong>, the program prints "It's not sunny right now.".
+    </li>
+  </ul>
+  <p>
+    The output reflects the logical evaluation of the Boolean variables isRaining and isSunny according to the conditions specified in the code.
+  </p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

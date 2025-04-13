@@ -1,0 +1,43 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block title %}
+  Python Lesson List
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/student/student_home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/lesson/cards.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="main-container">
+    <div class="secondary-container">
+      <div class="card-container">
+        {% for lesson_py in lessons_py|dictsort:"id" %}
+        <div class="card-box">
+          {% if not lesson_py.previous_lesson_id or lesson_py.previous_lesson_id in completed_lessons %}
+          <a href="{% url 'student:py_lesson_detail' lesson_slug=lesson_py.slug %}">
+          {% else %}
+          <a href="#" class="disabled">
+          {% endif %}
+            <div class="upperbox">
+              <img src="{{ lesson_py.banner.url }}" alt="{{ lesson_py.title }}">
+            </div>
+            <div class="lowerbox">
+              <h1>{{ lesson_py.lesson }}</h1>
+              <p>{{ lesson_py.title }}</p>
+              <p class="desc">{{ lesson_py.description }}</p>
+            </div>
+            {% if lesson_py.previous_lesson_id and lesson_py.previous_lesson_id not in completed_lessons %}
+            <div class="lock-overlay">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            {% endif %}
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

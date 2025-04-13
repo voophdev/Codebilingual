@@ -1,0 +1,107 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>C++ loop statements are programming constructs used for repetitive execution of a block of code based on specified conditions. They enable efficient and organized handling of tasks that need to be performed repeatedly. Loops help streamline code by reducing redundancy and improving readability.</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>do-while loop</h1>
+  <p>
+    A do-while loop is a control flow statement in C++ that executes a block of code at least once, and then repeatedly executes the block as long as a specified condition is true. Unlike the while loop, the condition is evaluated after the execution of the loop body, ensuring that the body is executed at least once, even if the condition is initially false.
+  </p>
+  <p>
+    The syntax of a do-while loop in C++ is as follows:
+  </p>
+<pre class="lang-cpp"><code class="lang-cpp">do {
+// code to be executed
+// This block of code will be executed at least once
+// before evaluating the condition
+} while (condition);</code></pre>
+  <p>
+    Here's an explanation of each part of the do-while loop:
+  </p>
+  <ol>
+    <li>
+      <h3>Loop Body</h3>
+      <p>
+        This is the block of code that gets executed repeatedly as long as the condition remains true.
+      </p>
+    </li>
+    <li>
+      <h3>Condition</h3>
+      <p>
+        After executing the loop body, the condition is evaluated. If the condition is true, the loop continues. If the condition is false, the loop terminates, and the program continues with the code after the loop.
+      </p>
+    </li>
+  </ol>
+
+  <p>
+    Here's a simple example of a do-while loop in C++:
+  </p>
+
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+int i = 0;
+do {
+  std::cout << "Iteration " << i + 1 << std::endl;
+  ++i;
+} while (i < 5);
+
+return 0;
+}</code></pre>
+  <p>
+    Let's break it down:
+  </p>
+  <ol>
+    <li>
+      <strong>int i = 0;</strong> initializes the loop control variable i to 0 before the loop begins
+    </li>
+    <li>
+      <strong>std::count << "Iteration " << i + 1 << std:: endl; </strong>is the loop body. It prints the current iteration number to the console.
+    </li>
+    <li>
+      <strong>i++; </strong>increments i after each iteration.
+    </li>
+    <li>
+      <strong>int < 5;</strong> is the condition. The loop will continue as long as i is less than 5.
+    </li>
+  </ol>
+<pre class="lang-"><code class="lang-">Output:
+
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5</code></pre>
+  <p>
+    The loop runs five times, printing the current iteration number each time, from 1 to 5. Since the condition is checked after the first iteration, the loop executes at least once, even if the condition is initially false.
+  </p>
+  <p>
+    <strong>NOTE:</strong> When using loops in C++, ensure proper initialization, clear termination conditions, efficient loop body execution, testing with various inputs, and avoidance of infinite loops.
+  </p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

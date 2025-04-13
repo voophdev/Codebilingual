@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block headimage %}
+    <img src="{% static 'img/image1.jpeg' %}" alt="top-photo" class="bg-photo">
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/landing-page.css' %}">
+    <link rel="stylesheet" href="{% static 'css/authuser/forms.css' %}">
+    <script src="{% static 'js/authuser/forms.js'%}" defer></script>
+{% endblock %}
+
+{% block content %}
+    <div class="main-container">
+        <div class="secondary-container">
+            <div class="form-container">
+                <h1>Sign Up</h1>
+                <form method="post" onsubmit="return validatePassword()">
+                    {% csrf_token %}
+                    
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert {{ message.tags }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    <input type="text" id="first_name" name="first_name" placeholder="First Name">
+                    <input type="text" id="last_name" name="last_name" required placeholder="Last Name">
+                    <input type="email" id="email" name="email" required placeholder="Email address">
+                    <input type="password" id="password" name="password" required placeholder="Password" onfocus="showTooltip()" onblur="hideTooltip()" onkeyup="checkPassword()">
+                    <input type="password" id="confirm_password" name="confirm_password" required placeholder="Confirm Password">
+                    
+                    <p>Already have an account? <a href="{% url 'users:signin' %}">Login here</a></p>
+                    
+                    <!-- Hidden role field with value 'student' -->
+                    <input type="hidden" id="role" name="role" value="student">
+                    
+                    <input class="submit-button" type="submit" value="Sign Up">
+                </form>
+                <div id="password-tooltip" class="tooltip">
+                    <p>Password must contain:</p>
+                    <ul>
+                        <li id="length" class="invalid">At least 8 characters</li>
+                        <li id="uppercase" class="invalid">An uppercase letter</li>
+                        <li id="number" class="invalid">A number</li>
+                        <li id="special" class="invalid">A special character</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

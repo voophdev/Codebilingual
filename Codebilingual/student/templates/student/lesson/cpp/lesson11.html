@@ -1,0 +1,104 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>C++ loop statements are programming constructs used for repetitive execution of a block of code based on specified conditions. They enable efficient and organized handling of tasks that need to be performed repeatedly. Loops help streamline code by reducing redundancy and improving readability.</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>while loop</h1>
+  <p>
+    A while loop is a control flow statement in C++ that executes a block of code repeatedly as long as a specified condition is true. Unlike the for loop, the while loop does not have initialization or increment/decrement expressions within the loop syntax. Instead, it relies solely on a condition to determine when to terminate.
+  </p>
+  <p>
+    The syntax of a for loop in C++ is as follows:
+  </p>
+<pre class="lang-cpp"><code class="lang-cpp">while (condition) {
+// code to be executed
+// This block of code will be executed repeatedly
+// as long as the condition remains true
+}</code></pre>
+  <p>
+    Here's an explanation of each part of the while loop:
+  </p>
+  <ol>
+    <li>
+      <h3>Condition</h3>
+      <p>
+        The while loop starts by evaluating this condition. If the condition is true, the code inside the loop is executed. If the condition is false, the loop terminates, and the program continues with the code after the loop.
+      </p>
+    </li>
+    <li>
+      <h3>Loop Body</h3>
+      <p>
+        This is the block of code that gets executed repeatedly as long as the condition remains true.
+      </p>
+    </li>
+  </ol>
+
+  <p>
+    Here's a simple example of a while loop in C++:
+  </p>
+
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+int i = 0;
+while (i < 5) {
+  std::cout << "Iteration " << i + 1 << std::endl;
+  ++i;
+}
+
+return 0;
+}</code></pre>
+  <p>
+    Let's break it down:
+  </p>
+  <ol>
+    <li>
+    <strong>int i = 0;</strong> initializes the loop control variable i to 0 before the loop begins
+    </li>
+    <li>
+    <strong>int < 5;</strong> is the condition. The loop will continue as long as i is less than 5.
+    </li>
+    <li>
+    <strong>i++ </strong>increments i after each iteration.
+    </li>
+    <li>
+    <strong>std::count << "Iteration " << i + 1 << std:: endl; </strong>is the loop body. It prints the current iteration number to the console.
+    </li>
+  </ol>
+<pre class="lang-"><code class="lang-">Output:
+
+Iteration 1
+Iteration 2
+Iteration 3
+Iteration 4
+Iteration 5</code></pre>
+  <p>
+    The loop runs five times, printing the current iteration number each time, from 1 to 5.
+  </p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

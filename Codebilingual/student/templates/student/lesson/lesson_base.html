@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block title %}
+      Django App
+    {% endblock %}
+  </title>
+  <script src="{% static 'js/prism.js' %}" defer></script>
+  <link rel="stylesheet" href="{% static 'css/landing-page.css' %}">
+  <link rel="stylesheet" href="{% static 'css/lesson/prism.css' %}">
+  {% block style %}
+  {% endblock %}
+</head>
+<body>
+  <header>
+    <h1 class="logo">CodeBilingual</h1>
+    <nav class="navigation">
+      <a href="{% url 'student:student_home' %}">Home</a>
+      <a href="{% url 'student:select_language' %}">Lessons</a>
+      <a href="{% url 'quizzes:select_quiz' %}">Quizzes</a>
+      <a href="{% url 'translator:translate' %}">Translate</a>
+      <a href="{% url 'users:logout' %}">Logout</a>
+    </nav>
+  </header>
+  <main>
+    <div class="main-container">
+      <div class="secondary-container">
+        <div class="container">
+          <div class="lesson-container">
+            <div class="back-container">
+              <a 
+                href="
+                {% if lesson_type == 'cpp' %}
+                {% url 'student:cpp_lessonlist' %}
+                {% elif lesson_type == 'py' %}
+                {% url 'student:py_lessonlist' %}
+                {% endif %}
+              ">
+                <i class="fa-solid fa-arrow-left-long"></i>
+              </a>
+            </div>
+              <div class="title-container">
+                {% block header %}
+                {% endblock %}
+              </div>
+              <div class="p-desc-container">
+                {% block description %}
+                {% endblock %}
+              </div>
+              {% block content %}
+      
+              {% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright &copy; 2024 CodeBilingual. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

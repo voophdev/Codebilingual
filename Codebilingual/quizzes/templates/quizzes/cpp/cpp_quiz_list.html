@@ -1,0 +1,50 @@
+{% extends 'student/base.html' %}
+{% load static %}
+{% load quiz_extras %}
+
+{% block title %}
+  C++ Quizzes
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/student/student_home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/quizzes/cards.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="main-container">
+    <div class="secondary-container">
+      <div class="card-container">
+        {% for item in quiz_status %}
+        <div class="card-box">
+          {% if item.locked %}
+            <div class="lock-overlay">
+              <i class="fa-solid fa-lock"></i>
+              <p>Finish previous quiz</p>
+            </div>
+          {% else %}
+            <a href="{% url 'quizzes:take_cpp_quiz' item.quiz.id %}">
+              <div class="upperbox">
+                <img src="{% static 'img/cpp.png' %}" alt="{{ item.quiz.title }}">
+              </div>
+              <div class="lowerbox">
+                <h1>{{ item.quiz.title }}</h1>
+                <p>{{ item.quiz.description }}</p>
+                {% if item.result %}
+                  {% if item.result.score is not None %}
+                    <p>Your Score: {{ item.result.score }}%</p>
+                  {% else %}
+                    <p>Quiz in progress</p>
+                  {% endif %}
+                {% else %}
+                  <p>No attempt yet</p>
+                {% endif %}
+              </div>
+            </a>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

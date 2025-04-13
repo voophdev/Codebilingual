@@ -1,0 +1,40 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/py/lesson.css' %}">
+  <script src="{% static 'js/data/data-types.js' %}" defer></script>
+  <script src="{% static 'js/view/variables.js' %}" defer></script>
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="js-second-container">
+</div>
+
+<div class="note-container">
+  <p>
+    <strong>NOTE: </strong>Python's rich set of data types allows you to work with various kinds of data efficiently, making it a versatile language for a wide range of programming tasks.
+  </p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

@@ -1,0 +1,141 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>C++ Math</h1>
+  <pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+#include &lt;math&gt;
+
+int main() {
+    double x = 2.5;
+    
+    // Square root function (sqrt)
+    double squareRootResult = std::sqrt(x);
+    std::cout << "Square root of " << x << " is: " << squareRootResult << std::endl;
+
+    // Trigonometric sine function (sin)
+    double sineResult = std::sin(x);
+    std::cout << "Sine of " << x << " is: " << sineResult << std::endl;
+
+    // Exponential function (exp)
+    double expResult = std::exp(x);
+    std::cout << "Exponential of " << x << " is: " << expResult << std::endl;
+    return 0;
+}</code></pre>
+
+  <ul>
+    <li>
+      <strong>std::sqrt(x):</strong> This function calculates the square root of x.
+    </li>
+    <li>
+      <strong>std::sin(x):</strong> This function calculates the sine of x (where x is in radians).
+    </li>
+    <li>
+      <strong>std::exp(x):</strong> This function calculates the exponential function, i.e., e raised to the power of x.
+    </li>
+  </ul>
+  <p>
+    These are just a few examples of the many mathematical functions available in C++ through the <code class="lang-cpp">&lt;cmath&gt;</code> header.
+  </p>
+<pre class="lang-"><code class="lang-">Output: 
+
+Square root of 2.5 is: 1.58114
+Sine of 2.5 is: 0.598472
+Exponential of 2.5 is: 12.1825</code></pre>
+
+  <p>Here’s a table listing some common math functions provided by the &lt;cmath&gt;:</p>
+  <table border="1">
+    <tr>
+      <th>Function</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>sqrt(x)</td>
+      <td>Returns the square root of x.</td>
+    </tr>
+    <tr>
+      <td>sin(x)</td>
+      <td>Returns the sine of x (where x is in radians).</td>
+    </tr>
+    <tr>
+      <td>cos(x)</td>
+      <td>Returns the cosine of x (where x is in radians).</td>
+    </tr>
+    <tr>
+      <td>tan(x)</td>
+      <td>Returns the tangent of x (where x is in radians).</td>
+    </tr>
+    <tr>
+      <td>asin(x)</td>
+      <td> Returns the arc sine (inverse sine) of x in radians, within the range of [-π/2, π/2].</td>
+    </tr>
+    <tr>
+      <td>acos(x)</td>
+      <td>Returns the arc cosine (inverse cosine) of x in radians, within the range of [0, π].</td>
+    </tr>
+    <tr>
+      <td>atan(x)</td>
+      <td>Returns the arc tangent (inverse tangent) of x in radians, within the range of [-π/2, π/2].</td>
+    </tr>
+    <tr>
+      <td>exp(x)</td>
+      <td> Returns the value of e raised to the power of x, where e is the base of the natural logarithm.</td>
+    </tr>
+    <tr>
+      <td>log(x)</td>
+      <td>Returns the natural logarithm of x (base e).</td>
+    </tr>
+    <tr>
+      <td>log10(x)</td>
+      <td>Returns the base-10 logarithm of x.</td>
+    </tr>
+    <tr>
+      <td>pow(x, y)</td>
+      <td>Returns x raised to the power of y.</td>
+    </tr>
+    <tr>
+      <td>abs(x)</td>
+      <td>Returns the absolute value of x.</td>
+    </tr>
+    <tr>
+      <td>floor(x)</td>
+      <td>Returns the largest integer less than or equal to x.</td>
+    </tr>
+    <tr>
+      <td>ceil(x)</td>
+      <td> Returns the smallest integer greater than or equal to x.</td>
+    </tr>
+    <tr>
+      <td>round(x)</td>
+      <td>Rounds x to the nearest integer.</td>
+    </tr>
+  </table>
+  <p>These functions are part of the C++ standard library and are commonly used in mathematical calculations.</p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

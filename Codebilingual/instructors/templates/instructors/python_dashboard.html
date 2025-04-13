@@ -1,0 +1,48 @@
+{% extends 'instructors/base.html' %}
+{% load static %}
+{% load custom_filters %}
+
+{% block title %}
+  Python Scores
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/instructors/instructors_home.css' %}">  
+  <link rel="stylesheet" href="{% static 'css/instructors/dashboard.css' %}">  
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+  <div class="secondary-container">
+    <div class="container">
+      <h1>Python Quiz Scoresheet</h1>
+      <div class="table-container">
+        <table border="1">
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>Full Name</th>
+              {% for python_quiz_title in all_python_quiz_titles %}
+                <th>{{ python_quiz_title }}</th>
+              {% endfor %}
+              <th>Average Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for student in python_students %}
+              <tr>
+                <td>{{ student.user_id }}</td>
+                <td>{{ student.full_name }}</td>
+                {% for python_quiz_title in all_python_quiz_titles %}
+                  <td>{{ student.quiz_scores|dict_lookup:python_quiz_title|default:"N/A"|floatformat:"1" }}</td>
+                {% endfor %}
+                <td>{{ student.average_score|floatformat:"1" }}%</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

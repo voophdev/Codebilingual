@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+  Login
+{% endblock %}
+  
+{% block headimage %}
+  <img src="{% static 'img/image1.jpeg' %}" alt="top-photo" class="bg-photo">  
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/landing-page.css' %}">
+  <link rel="stylesheet" href="{% static 'css/authuser/forms.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="main-container">
+      <div class="secondary-container">
+        <div class="form-container login-form-container">
+            <h1 class="login">Login</h1>
+            {% if error_message %}
+              <p class="error-message">{{ error_message }}</p>
+            {% endif %}
+            <form class="signin" method="post">
+                {% csrf_token %}
+                <input type="email" id="email" name="email" required placeholder="Email address">
+                <input type="password" id="password" name="password" required placeholder="Password">
+                
+                <div class="links-container">
+                  <p>Don't have an account? <a href="{% url 'users:signup' %}">Register here</a></p>
+                </div>
+
+                <button class="submit-button" type="submit">Sign In</button>
+            </form>
+        </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>Creating an Array</h1>
+  <p>
+    To create an array in C++, you specify the type of elements the array will hold and the number of elements in the array.
+  </p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+// Creating an array of integers with 5 elements
+int numbers[5];
+
+// Assigning values to array elements
+numbers[0] = 10;
+numbers[1] = 20;
+numbers[2] = 30;
+numbers[3] = 40;
+numbers[4] = 50;
+
+return 0;
+}</code></pre>
+  <ul>
+    <li>
+      In this example, we declare an array of integers named <strong>numbers</strong> with 5 elements.
+    </li>
+    <li>
+      Each element in the array can be accessed using an index, starting from 0 to 4 (total of 5 elements).
+    </li>
+    <li>
+      We assign values to each element of the array using their respective indices.
+    </li>
+  </ul>
+
+  <p>
+    You can also create an array and initialize its elements at the same time using curly braces <code>{ }</code>. This method is more convenient and often preferred over assigning values to individual array elements one by one.
+  </p>
+
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+// Creating an array of integers with 5 elements and initializing them
+int numbers[5] = {10, 20, 30, 40, 50};
+
+return 0;
+}</code></pre>
+  <ul>
+    <li>
+      We declare an array of integers named <strong>numbers</strong> with 5 elements.
+    </li>
+    <li>
+      We initialize the array with values <code>{10, 20, 30, 40, 50}</code> within curly braces <code>{ }</code>.
+    </li>
+    <li>
+      Each value inside the braces corresponds to an element in the array, in the order they appear.
+    </li>
+  </ul>
+  <p>
+    This approach is simpler and more concise, especially when you know the initial values of the array elements at the time of declaration.
+  </p>
+</div>
+
+<div class="second-container">
+  <h1>Accessing Array Elements</h1>
+  <p>
+    You can access array elements by specifying the index of the element within square brackets <code>[ ]</code>.
+  </p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+int numbers[5] = {10, 20, 30, 40, 50};
+
+// Accessing array elements
+std::cout << "Element at index 2: " << numbers[2] << std::endl;
+
+return 0;
+}</code></pre>
+  <ul>
+    <li>
+      In this example, we declare an array of integers named <strong>numbers</strong> with 5 elements.
+    </li>
+    <li>
+      We access the element at index 2 (which is the third element in the array) using <strong>numbers[2]</strong>.
+    </li>
+    <li>
+      The output will be the value stored at index 2, which is 30.
+    </li>
+  </ul>
+<pre class="lang-"><code class="lang-">Output:
+
+30</code></pre>
+</div>
+
+      <div class="second-container">
+  <h1>Changing Array Elements</h1>
+  <p>
+    You can change the value of an array element by assigning a new value to it using its index.
+  </p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+int numbers[5] = {10, 20, 30, 40, 50};
+std::cout << "Before changing the array element value: " << numbers[3] << std::endl;
+// Changing array elements
+numbers[3] = 45;
+std::cout << "After changing the array element value: " << numbers[3] << std::endl;
+return 0;
+}</code></pre>
+  <ul>
+    <li>
+      In this example, we change the value of the element at index 3 (which is the fourth element in the array) to <strong>45</strong>.
+    </li>
+    <li>
+      After this change, the value of <strong>numbers[3]</strong> will be <strong>45</strong>.
+    </li>
+  </ul>
+<pre class="lang-"><code class="lang-">Output:
+
+Before changing the array element value: 40
+After changing the array element value: 45</code></pre>
+  <p>
+    <strong>NOTE:</strong> Remember that array indices in C++ start from 0. Always be cautious with array bounds to avoid accessing elements outside the array, which can lead to unexpected behavior or errors.
+  </p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

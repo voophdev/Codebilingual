@@ -1,0 +1,11 @@
+{% extends 'student/base.html' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+  <h1>{{ quiz.title }} - Result</h1>
+  <p>Your Score: {{ result.score }}%</p>
+  <a href="{% url 'quizzes:cpp_quiz_list' %}">Back to C++ Quizzes</a>
+{% endblock %}

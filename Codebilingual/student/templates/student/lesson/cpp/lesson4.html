@@ -1,0 +1,301 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>Arithmetic Operators</h1>
+  <p>Arithmetic operators are used to perform mathematical operations.</p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  int a = 10, b = 5;
+  int sum = a + b;  // '+' = Addition
+  int difference = a - b;  // '-' = Subtraction
+  int product = a * b;  // '*' = Multiplication
+  int quotient = a / b;  // '/' = Division
+  int remainder = a % b;  // '%' = Modulus (remainder)
+
+  cout << "Sum: " << sum << endl;
+  cout << "Difference: " << difference << endl;
+  cout << "Product: " << product << endl;
+  cout << "Quotient: " << quotient << endl;
+  cout << "Remainder: " << remainder << endl;
+
+  return 0;
+}</code></pre>
+  <p>This C++ code performs basic arithmetic operations on two integer variables a and b, and then prints out the results. Here's a simplified explanation:</p>
+  <ul>
+    <li><strong>int a = 10, b = 5;</strong>: Initializes two integer variables <strong>a</strong> and <strong>b</strong> with values <strong>10</strong> and <strong>5</strong> respectively.</li>
+    <li><strong>int sum = a + b;</strong>: Adds <strong>a</strong> and <strong>b</strong> and stores the result in <strong>sum</strong> variable.</li>
+    <li><strong>int difference = a - b;</strong>: Subtracts <strong>b</strong> from <strong>a</strong> and stores the result in <strong>difference</strong> variable.</li>
+    <li><strong>int product = a * b;</strong>: Multiplies <strong>a</strong> and <strong>b</strong> and stores the result in <strong>product</strong> variable.</li>
+    <li><strong>int quotient = a / b;</strong>: Divides <strong>a</strong> by <strong>b</strong> and stores the integer quotient in <strong>quotient</strong> variable.</li>
+    <li><strong>int remainder = a % b;</strong>: Calculates the remainder when <strong>a</strong> is divided by <strong>b</strong> and stores it in <strong>remainder</strong> variable.</li>
+  </ul>
+  <p>After performing these operations, the code prints out the values of sum, difference, product, quotient, and remainder using cout.</p>
+<pre class="lang-"><code class="lang-">Output:
+
+Sum: 15
+Difference: 5
+Product: 50
+Quotient: 2
+Remainder: 0</code></pre>
+</div>
+
+<div class="second-container">
+  <h1>Relational Operators</h1>
+  <p>Relational operators are fundamental elements in programming langs like C++ that enable the comparison of two values to establish their relationship. These operators provide a means to evaluate expressions and make logical decisions based on the relative magnitudes or equality of the values involved. They help in understanding how values relate to each other in terms of their numerical or textual representation.</p>
+  <ol>
+    <li>
+      <p><strong>Equal to ('=='):</strong> Checks if two values are equal.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">int a = 5, b = 5;
+
+  if (a == b) {
+      cout << "a is equal to b" << endl;
+  }
+
+  //Output: a is equal to b</code></pre>
+    </li>
+
+    <li>
+      <p><strong>Not equal to ('!='):</strong> Checks if two values are not equal.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">int x = 10, y = 20;
+
+  if (x != y) {
+      cout << "x is not equal to y" << endl;
+  }
+
+  //Output: x is not equal to y</code></pre>
+    </li>
+
+    <li>
+      <p><strong>Greater than to ('>'):</strong> hecks if the left operand is greater than the right operand.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">float p = 3.14, q = 2.71;
+
+  if (p > q) {
+      cout << "p is greater than q" << endl;
+  }
+
+  //Output: p is greater than q</code></pre>
+    </li>
+
+    <li>
+      <p><strong>Less than ('<'):</strong> Checks if the left operand is less than the right operand.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">int m = 15, n = 20;
+
+  if (m < n) {
+      cout << "m is less than n" << endl;
+  }
+
+  //Output: m is less than n</code></pre>
+    </li>
+
+    <li>
+      <p><strong>Greater than or equal to ('>='):</strong> Checks if the left operand is greater than or equal to the right operand.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">int x = 25, y = 20;
+
+  if (x >= y) {
+      cout << "x is greater than or equal to y" << endl;
+  }
+
+  //Output: x is greater than or equal to y</code></pre>
+    </li>
+
+    <li>
+      <p><strong>Less than or equal to ('<='):</strong> Checks if two values are equal.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">int a = 10, b = 15;
+
+  if (a <= b) {
+      cout << "a is less than or equal to b" << endl;
+  }
+
+  //Output: a is less than or equal to b</code></pre>
+      </li>
+    </ol>
+</div>
+
+<div class="second-container">
+  <h1>Logical Operators</h1>
+  <p>
+    Logical operators in C++ are used to perform logical operations on boolean expressions. These operators help in combining multiple conditions or boolean values to create more complex conditions. 
+  </p>
+  <div class="table-container">
+    <table>
+      <tr>
+        <th>Operator</th>
+        <th>Description</th>
+        <th>Example</th>
+        <th>Result</th>
+      </tr>
+      <tr>
+        <td><code>&amp;&amp;</code></td>
+        <td>Logical AND</td>
+        <td><code>x > 0 &amp;&amp; x < 10</code></td>
+        <td>True if both conditions are true</td>
+      </tr>
+      <tr>
+        <td><code>||</code></td>
+        <td>Logical OR</td>
+        <td><code>x == 0 || x == 10</code></td>
+        <td>True if at least one condition is true</td>
+      </tr>
+      <tr>
+        <td><code>!</code></td>
+        <td>Logical NOT</td>
+        <td><code>!flag</code></td>
+        <td>True if <code>flag</code> is false, false if <code>flag</code> is true</td>
+      </tr>
+    </table>
+  </div>
+
+  <ol>
+    <li>
+      <h3>Logical AND ('&&')</h3>
+      <p>The logical AND operator returns true if both operands are true, otherwise, it returns false.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">int x = 5, y = 10;
+  if (x > 0 && y > 0) {
+    cout << "Both x and y are positive." << endl;
+  }</code></pre>
+
+  <pre class="lang-"><code class="lang-">Output:
+  Both x and y are positive.
+  </code></pre>
+    </li>
+
+    <li>
+      <h3>Logical OR ('||')</h3>
+      <p>The logical OR operator returns true if at least one of the operands is true, otherwise, it returns false.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">int x = 5, y = -5;
+  if (x > 0 || y > 0) {
+      cout << "At least one of x and y is positive." << endl;
+  }</code></pre>
+
+  <pre class="lang-"><code class="lang-">Output:
+  At least one of x and y is positive.
+  </code></pre>
+    </li>
+    
+    <li>
+      <h3>Logical NOT ('!')</h3>
+      <p>The logical NOT operator reverses the logical state of its operand. If the operand is true, it returns false, and if the operand is false, it returns true.</p>
+  <pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+  using namespace std;
+
+  int main() {
+      // Declare a boolean variable
+      bool sunny = true;
+      
+      // Check if it's sunny or not
+      if (sunny) {
+          cout << "It's sunny outside!" << endl;
+      } else {
+          cout << "It's not sunny outside." << endl;
+      }
+      
+      return 0;
+  }</code></pre>
+
+  <pre class="lang-"><code class="lang-">Output:
+
+  At least one of x and y is positive.
+  </code></pre>
+    </li>
+  </ol>
+  <p><strong>NOTE: </strong>Logical operators play a key role in programming because they enable a system or program to take specific decisions depending on the specific underlying conditions.</p>
+</div>
+
+<div class="second-container">
+  <h1>Bitwise Operators</h1>
+  <p>Bitwise operators in C++ are used to perform operations at the bit level. These operators manipulate individual bits of integer operands.</p>
+
+  <p>There are several bitwise operators in C++, including:</p>
+  <ol>
+    <li>
+      <h3>Bitwise AND <code>&</code></h3>
+      <p>Performs a bitwise AND operation on each pair of corresponding bits. The result is 1 if both bits are 1, otherwise 0.</p>
+    </li>
+    <li>
+      <h3>Bitwise OR <code>|</code></h3>
+      <p>Performs a bitwise OR operation on each pair of corresponding bits. The result is 1 if at least one of the bits is 1, otherwise 0.</p>
+    </li>
+    <li>
+      <h3>Bitwise XOR <code>^</code></h3>
+      <p>Performs a bitwise exclusive OR operation on each pair of corresponding bits. The result is 1 if the bits are different, otherwise 0.</p>
+    </li>
+    <li>
+      <h3>Bitwise NOT <code>~</code></h3>
+      <p>Performs a bitwise NOT operation on each bit, inverting its value. 1 becomes 0, and 0 becomes 1.</p>
+    </li>
+    <li>
+      <h3>Left Shift <code><<</code></h3>
+      <p>Shifts the bits of the left operand to the left by the number of positions specified by the right operand.</p>
+    </li>
+    <li>
+      <h3>Right Shift <code>>></code></h3>
+      <p>Shifts the bits of the left operand to the right by the number of positions specified by the right operand.</p>
+    </li>
+  </ol>
+  <p>Here's a brief example demonstrating the usage of bitwise operators:</p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  int a = 5; // Binary: 0101
+  int b = 3; // Binary: 0011
+
+  // Bitwise AND
+  int result_and = a & b; // Result: 0001 (1 in decimal)
+
+  // Bitwise OR
+  int result_or = a | b; // Result: 0111 (7 in decimal)
+
+  // Bitwise XOR
+  int result_xor = a ^ b; // Result: 0110 (6 in decimal)
+
+  // Bitwise NOT
+  int result_not = ~a; // Result: 1111 1111 1111 1111 1111 1111 1111 1010 (-6 in decimal, assuming 32-bit integers)
+
+  cout << "Bitwise AND: " << result_and << endl;
+  cout << "Bitwise OR: " << result_or << endl;
+  cout << "Bitwise XOR: " << result_xor << endl;
+  cout << "Bitwise NOT: " << result_not << endl;
+
+  return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lang-">OUTPUT:
+
+Bitwise AND: 1
+Bitwise OR: 7
+Bitwise XOR: 6
+Bitwise NOT: -6
+</code></pre>
+  <p>This is a basic overview of bitwise operators in C++. They are often used in low-level programming, such as device driver development, embedded systems, and cryptography.</p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

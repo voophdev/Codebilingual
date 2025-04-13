@@ -1,0 +1,40 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/py/lesson.css' %}">
+  <script src="{% static 'js/data/strings.js' %}" defer></script>
+  <script src="{% static 'js/view/strings.js' %}" defer></script>
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>In Python, a string is a sequence of characters enclosed within either single quotes ( ' ) or double quotes ( " ). Strings are immutable, meaning their contents cannot be changed after creation. Python provides powerful string manipulation capabilities, making it easy to work with text data.</p>
+{% endblock %}
+
+{% block content %}
+<div class="js-second-container">
+</div>
+
+<div class="note-container">
+  <p>
+    <strong>NOTE:</strong> Python strings support a wide range of operations and methods for string manipulation, making them versatile for handling text data in Python programs.
+  </p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

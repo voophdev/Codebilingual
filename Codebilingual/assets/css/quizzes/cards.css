@@ -1,0 +1,98 @@
+.card-container{
+  position: relative;
+  top: 90px;
+  display: flex;
+  padding: 60px;
+  border-radius: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.card-container a {
+  text-decoration: none;
+}
+
+.card-box {
+  position: relative;
+  margin: 40px;
+  height: 500px;
+  width: 400px;
+  border: solid 5px white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: black;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  overflow: hidden;
+}
+
+.lock-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 3em;
+  background: rgba(0, 0, 0, 0.759);
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+}
+
+.lock-overlay p {
+  font-size: 16px;
+  margin-top: 20px;
+  font-family: 'Poppins'
+}
+
+a.disabled {
+  pointer-events: none;
+}
+
+.card-box:hover {
+  transform: scale(1.05);
+}
+.card-box .upperbox {
+  width: 100%;
+  height: 230px;
+  background-color: white;
+}
+.card-box .upperbox img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.card-box .lowerbox {
+  color: white;
+  text-align: center;
+  font-family: 'Poppins';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.card-box .lowerbox h1 {
+  font-weight: bold;
+  font-size: 26px;
+  margin-top: 24px;
+}
+
+.card-box .lowerbox p {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.card-box .lowerbox .desc {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0px 20px;
+  text-align: justify;
+}

@@ -1,0 +1,109 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>Declaring Variables:</h1>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+  // Declare integer variables
+  int age;
+  int height = 180; // Declare and initialize a variable
+
+  // Declare floating-point variables
+  float pi = 3.14;
+  double salary;
+
+  // Output values
+  std::cout << "Age: " << age << std::endl; // Output uninitialized variable (undefined behavior)
+  std::cout << "Height: " << height << " cm" << std::endl;
+  std::cout << "Pi: " << pi << std::endl;
+  std::cout << "Salary: " << salary << std::endl; // Output uninitialized variable (undefined behavior)
+
+  return 0;
+}</code></pre>
+
+  <p>This code in C++ declares variables for age, height, pi, and salary. Variables are like labeled boxes where data can be stored. Here's a quick rundown:</p>
+  <ul>
+    <li><code class="lang-cpp">int age;</code> - Declares an integer variable for age.</li>
+    <li><code class="lang-cpp">int height = 180;</code> - Declares and sets height to 180.</li>
+    <li><code class="lang-cpp">float pi = 3.14;</code> - Declares pi as a floating-point number with value 3.14.</li>
+    <li><code class="lang-cpp">double salary;</code> - Declares a variable for salary, but it's not given a value yet.</li>
+  </ul>
+
+<pre class="lang-"><code class="lang-">Output:
+
+Age: &lt;undefined&gt;
+Height: 180 cm
+Pi: 3.14
+Salary: &lt;undefined&gt;</code></pre>
+  <p>
+    <strong>NOTE:</strong> The values for age and salary are undefined because they have not been assigned any specific value. Accessing uninitialized variables leads to undefined behavior in C++.
+  </p>
+</div>
+
+<div class="second-container">
+  <h1>Initializing Variables:</h1>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    // Initialize variables at declaration
+    int x = 5;
+    float y = 3.5;
+
+    // Modify variable value
+    x = 10;
+
+    // Output values
+    std::cout << "x: " << x << std::endl;
+    std::cout << "y: " << y << std::endl;
+
+    return 0;
+}</code></pre>
+  
+  <p>This C++ code demonstrates variable initialization, where variables are assigned initial values when declared. Here's a quick overview:</p>
+
+  <ul>
+    <li><code class="lang-cpp">int x = 5;</code> - Declares and initializes an integer variable x with the value 5.</li>
+    <li><code class="lang-cpp">float y = 3.5;</code> - Declares and initializes a floating-point variable y with the value 3.5.</li>
+    <li>After initialization, variables can be modified by assigning them new values.</li>
+    <li>Outputting the values of x and y confirms their current values.</li>
+  </ul>
+
+<pre class="lang-"><code class="lang-">Output:
+
+x: 10
+y: 3.5</code></pre>
+  <p><strong>NOTE:</strong> Before using a variable in C++, you must declare it, specifying its data type and optionally, its initial value.</p>
+  <ul>
+    <li><strong>x</strong> is initialized with the value <strong>5</strong>, then modified to <strong>10</strong>.</li>
+    <li><strong>y</strong> is initialized with the value <strong>3.5</strong>.</li>
+  </ul>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

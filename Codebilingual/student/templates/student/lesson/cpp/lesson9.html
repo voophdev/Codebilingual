@@ -1,0 +1,117 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+  
+int main() {
+    int day = 3;
+
+    switch (day) {
+        case 1:
+            std::cout << "Monday" << std::endl;
+            break;
+        case 2:
+            std::cout << "Tuesday" << std::endl;
+            break;
+        case 3:
+            std::cout << "Wednesday" << std::endl;
+            break;
+        case 4:
+            std::cout << "Thursday" << std::endl;
+            break;
+        case 5:
+            std::cout << "Friday" << std::endl;
+            break;
+        default:
+            std::cout << "Weekend" << std::endl;
+            break;
+    }
+
+    return 0;
+  }</code></pre>
+          <p>In this example, the variable <strong>day</strong> is evaluated in the switch statement. Depending on the value of <strong>day</strong>, the corresponding case label is executed. Here, <strong>day</strong> is assigned the value <strong>3</strong>, so the code block associated with <strong>case 3</strong> is executed, printing "Wednesday" to the console.</p>
+  <pre class="lang-"><code class="lang-">Output: 
+  
+  Wednesday</code></pre>
+</div>
+<div class="second-container">
+  <h1>The break keyword</h1>
+  <p>
+    The <strong>break</strong> keyword is used to exit the switch block after executing the code associated with a specific case. When a <strong>break</strong> statement is encountered, the program exits the switch statement entirely, preventing execution from falling through to subsequent cases.
+  </p>
+</div>
+
+<div class="second-container">
+  <h1>The default keyword</h1>
+  <p>The <strong>default</strong> keyword is used to define a block of code that executes when none of the case labels match the value of the expression being evaluated. It serves as a catch-all case for values that don't have specific case labels defined.</p>
+  <p>Let's explore the use of break and default within a switch statement with an example:</p>
+  <pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+  
+int main() {
+    int choice = 3;
+
+    switch (choice) {
+        case 1:
+            std::cout << "You chose option 1" << std::endl;
+            break; // Exit the switch block after executing case 1
+        case 2:
+            std::cout << "You chose option 2" << std::endl;
+            break; // Exit the switch block after executing case 2
+        case 3:
+            std::cout << "You chose option 3" << std::endl;
+            break; // Exit the switch block after executing case 3
+        default:
+            std::cout << "Invalid choice. Please select a valid option." << std::endl;
+            break; // Exit the switch block if no other case matches
+    }
+
+    return 0;
+}</code></pre>
+  <ul>
+    <li>
+      In this example, the variable <strong>choice</strong> is evaluated in the switch statement.
+    </li>
+    <li>
+        Each <strong>case</strong> represents a different option that the user might choose.
+    </li>
+    <li>
+      The <strong>break</strong> statement is used after each case block to exit the switch statement once the corresponding case is executed. Without <strong>break</strong>, the program would continue executing the code for subsequent cases.
+    </li>
+    <li>
+      The <strong>default</strong> case is executed if the value of <strong>choice</strong> does not match any of the defined cases (1, 2, or 3). It serves as a catch-all for invalid choices.
+    </li>
+  </ul>
+<pre class="lang-"><code class="lang-">Output (when choice = 3):
+
+You chose option 3</code></pre>
+  <p>In this scenario, the value of <strong>choice</strong> is <strong>3</strong>, so the case associated with 3 is executed, printing "You chose option 3" to the console. After executing the code block for case <strong>3</strong>, the <strong>break</strong> statement causes the program to exit the switch block, preventing the execution of subsequent cases. Therefore, the program does not execute the <strong>default</strong> case in this scenario.</p>
+  <p><strong>NOTE:</strong>Ensure each case in the switch statement ends with a break statement to avoid unintended fall-through behavior.</p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

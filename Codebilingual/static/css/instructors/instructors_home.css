@@ -1,0 +1,125 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.main-container {
+  background-image: url(../../img/bgsamp5.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.secondary-container {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.title-container {
+  margin-top: 200px;
+  text-align: center;
+  color: white;
+  padding: 0;
+}
+
+.title-container .title {
+  letter-spacing: 15px;
+  font-weight: 800;
+  color: white;
+  font-size: 68px;
+  font-family: 'Poppins';
+  margin: 0;
+}
+
+.title-container h2 {
+  font-family:Arial, Helvetica, sans-serif
+}
+
+.title-container p {
+  font-weight: 100;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65vh;
+  margin: 40px 120px;
+  border-radius: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.rectangle-1,
+.rectangle-2,
+.rectangle-3 {
+  margin: 30px;
+  height: 400px;
+  width: 500px;
+  border-radius: 20px;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease;
+  border: solid 1px rgb(130, 130, 130);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.549);
+}
+
+.rectangle-1 a, 
+.rectangle-2 a,
+.rectangle-3 a {
+  text-decoration: none;
+}
+
+.rectangle-1:hover,
+.rectangle-2:hover {
+  transform:scale(1.1);
+}
+
+.rectangle-1 {
+ background-image: url(../../img/bgsamp.png);
+}
+
+.rectangle-2 {
+   background-image: url(../../img/bgsamp2.png);
+} 
+
+
+.front {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-holder button {
+  padding: 15px 40px;
+  border-radius: 15px;
+  background-color: rgb(151, 59, 188);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.text-holder button:hover {
+  opacity: .8;
+}
+
+.text-holder button:active {
+  opacity: .5;
+}
+
+.text-holder p{
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 13px;
+}

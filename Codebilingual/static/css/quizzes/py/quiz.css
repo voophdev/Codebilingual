@@ -1,0 +1,107 @@
+* {
+  font-family: 'Poppins'
+}
+
+.main-container {
+  background: url(../../../img/bgsamp.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.secondary-container {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: 80px;
+  margin-bottom: 90px;
+}
+
+.back-container {
+  display: flex;
+  padding: 15px 20px;
+  padding-bottom: 0px;
+  font-size: 25px;
+}
+
+.back-container i {
+  cursor: pointer;
+  transition: color 0.8s ease;
+  color: black;
+}
+
+.back-container i:hover {
+  color: rgb(85, 39, 223);
+}
+
+.back-container i:active {
+  opacity: 0.5;
+}
+
+.quiz-container {
+  border: 5px solid rgb(108, 108, 108);
+  margin: 40px;
+  padding: 40px;
+  border-radius: 20px;
+  width: 70%;
+  background-color: white;
+  padding-bottom: 25px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1px;
+  padding-bottom: 25px;
+  margin-bottom: 90px;
+}
+
+.quiz-container h1 {
+  text-align: center;
+}
+.quiz-container form {
+  margin-top: 40px;
+  margin-left: 60px;
+}
+
+.quiz-container form ol li{
+  margin-top: 20px;
+}
+
+.quiz-container form ol li label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.quiz-container .button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quiz-container .button-container .submit-button {
+  padding: 15px 30px;
+  border-radius: 50px;
+  color: white;
+  border: none;
+  background-color: #6f2da8d1;
+  cursor: pointer;
+  transition: transform 0.2 ease;
+}
+
+.quiz-container .button-container .submit-button:hover {
+  opacity: .8;
+}
+
+.quiz-container .button-container .submit-button:active {
+    transform: scale(.98);
+}

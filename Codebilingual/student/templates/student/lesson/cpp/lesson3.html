@@ -1,0 +1,152 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>Integer</h1>
+  <p>An integer is a data type used to represent whole numbers without fractional parts. Integers can be both positive and negative.</p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    // Declare an integer variable named 'age' and assign it the value 25
+    int age = 25;
+
+    // Print the value of 'age' to the console
+    std::cout << "Age: " << age << std::endl;
+
+    return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lang-">Output: 
+
+25</code></pre>
+</div>
+
+<div class="second-container">
+  <h1>Float</h1>
+  <p>Floating-point numbers are those that have a fractional part, allowing for a wider range of values than integers. Floats are typically used when dealing with real numbers that require decimal precision.</p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    // Declare a float variable named 'distance' and initialize it with a value
+    float distance = 10.5;
+
+    // Print out the value of the 'distance' variable
+    std::cout << "Distance: " << distance << std::endl;
+
+    return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lang-">Output:
+
+Distance: 10.5</code></pre>
+</div>
+
+<div class="second-container">
+  <h1>Double</h1>
+  <p>A double is a fundamental data type used to represent floating-point numbers with double precision. It offers higher precision compared to float and occupies more memory space.</p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    double pi = 3.14159265358979323846;
+    std::cout << "Value of pi: " << pi << std::endl;
+    return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lang-">Output:
+
+Value of pi: 3.14159265358979323846</code></pre>
+</div>
+
+<div class="second-container">
+  <h1>Char</h1>
+  <p>A char is a fundamental data type used to represent a single character.</p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    char grade = 'A'; // Assigning the character 'A' to the variable 'grade'
+
+    std::cout << "The grade is: " << grade << std::endl;
+
+    return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lang-">Output:
+
+The grade is: A</code></pre>
+</div>
+
+<div class="second-container">
+  <h1>Bool</h1>
+  <p>A bool is a fundamental data type used to represent boolean values, which can either be true or false. Commonly used in decision-making statements.</p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+    bool isRaining = true;
+    
+    if (isRaining) {
+        std::cout << "Take an umbrella!" << std::endl;
+    } else {
+        std::cout << "No need for an umbrella today." << std::endl;
+    }
+    
+    return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lang-">Output:
+
+Take an umbrella!</code></pre>
+  <ul>
+    <li>The variable <strong>isRaining</strong> is initialized with the value true.
+    </li>
+    <li>The program checks the condition <strong>(isRaining)</strong>, which evaluates to <strong>true</strong>, so the code inside the if statement block is executed, printing <strong>"Take an umbrella!"</strong>.</li>
+  </ul>
+</div>
+
+<div class="second-container">
+  <h1>String</h1>
+  <p>A string is a sequence of characters stored as a single data entity. C++ strings are versatile data types used to handle sequences of characters that can efficiently manage text-based data in a program.</p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    // Declare and initialize a string
+    std::string greeting = "Hello, world!";
+
+    // Output the string
+    std::cout << greeting << std::endl;
+
+    return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lang-">Output:
+
+Hello, world!</code></pre>
+  <p><strong>NOTE:</strong> Data types is essential for good programming because it determines the type, size, and behaviour of variables and enables proper data manipulation.</p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

@@ -1,0 +1,40 @@
+{% extends 'instructors/base.html' %}
+{% load static %}
+
+{% block title %}
+  Instructor Home
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/instructors/instructors_home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+  <div class="secondary-container">
+  <div class="title-container">
+    <h1 class="title">CODEBILINGUAL</h1>
+    <h2>Welcome back, {{ user.first_name }}</h2>
+    <p>View Student's Score for C++ and Python Quizzes</p>
+  </div>
+
+  <div class="container">
+    <div class="rectangle-1">
+      <div class="front">
+        <div class="text-holder">
+          <a href="{% url 'instructors:cpp_dashboard' %}"><button>C++ Scores<i class="fa-solid fa-arrow-right-long"></i></button></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rectangle-2">
+        <div class="front">
+          <div class="text-holder">
+            <a href="{% url 'instructors:py_dashboard' %}"><button>Python Scores<i class="fa-solid fa-arrow-right-long"></i></button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

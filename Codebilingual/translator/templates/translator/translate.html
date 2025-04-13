@@ -1,0 +1,64 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block title %}
+  Translate
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/translator/translator-styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/translator/prism.css' %}">
+  <script src="{% static 'js/translator/scripts/helper/language-selector.js' %}" defer></script>
+  <script type="module" src="{% static 'js/translator/scripts/translator.js' %}" defer></script>
+  <script src="{% static 'js/prism.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+  <form id="translation-form">
+    <div class="main-container">
+      <div class="second-container">
+        <img class="translation-logo" src="{% static 'img/convert.png' %}" alt="translate-image">
+        <a href="{% url 'translator:download_windows' %}">Download Code Translator for Windows</a>
+        <a href="{% url 'translator:download_mac' %}">Download Code Translator for Mac</a>
+        <div class="container">
+          <div class="source">
+            <label for="source">Source Language</label>
+            <select name="source" id="source">
+              <option value="cpp">C++</option>
+              <option value="python">Python</option>
+            </select>
+            <textarea name="code" id="code" cols="55" rows="10"></textarea>
+          </div>
+
+          <div class="target">
+            <label for="target">Target Language</label>
+            <select name="target" id="target">
+              <option value="python">Python</option>
+              <option value="cpp">C++</option>
+            </select>
+            <div class="output-container">
+              <pre class="language-"><code class="code-result language-">Output:</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="prompt-btn">Convert Code</button>
+
+        <div class="instruction-container">
+          <div class="left-side">
+            <h3>How to use this tool?</h3>
+            <p>This free OpenAI based online converter lets you convert code from C++ to Python in a click of a button. To use this converter, take the following steps:</p>
+            <ol>
+              <li>Type or paste your C++/Python code in the input box.</li>
+              <li>Click the convert button</li>
+              <li>The resulting code from the conversion will be displayed in the output box.</li>
+            </ol>
+          </div>
+          <div class="right-side">
+            <img src="{% static 'img/convert.png' %}" alt="convert-img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock %}

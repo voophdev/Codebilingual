@@ -1,0 +1,100 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/py/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>In Python, the math module provides access to various mathematical functions and constants for performing mathematical operations. These functions cover a wide range of mathematical operations, including basic arithmetic, trigonometry, logarithms, exponentiation, and more.</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>If Statement</h1>
+  <p>
+    The <code>if</code> statement is used to execute a block of code if a specified condition is true.
+  </p>
+<pre class="lang-python"><code class="lang-python">x = 10
+
+if x > 5:
+print("x is greater than 5")
+
+#output: x is greater than 5</code></pre>
+
+  <p>Here's the breakdown of the code:</p>
+  <ul>
+    <li>The variable <code>x</code> is assigned the value 10.</li>
+    <li>The <code>if</code> statement checks if the value of <code>x</code> is greater than 5.</li>
+    <li>Since <code>x</code> is indeed greater than 5 (10 &gt; 5), the condition evaluates to True.</li>
+    <li>As a result, the <code>print()</code> statement inside the <code>if</code> block is executed.</li>
+    <li>Therefore, the output will be: <code>x is greater than 5.</code></li>
+  </ul>
+</div>
+
+<div class="second-container">
+  <h1>Elif Statement</h1>
+  <p>
+    The <code>elif</code> statement allows you to check multiple conditions.
+  </p>
+<pre class="lang-python"><code class="lang-python">x = 10
+
+if x < 0:
+print("x is negative")
+elif x == 0:
+print("x is zero")
+else:
+print("x is positive")
+
+#output: x is positive</code></pre>
+
+  <p>Here's the breakdown of the code:</p>
+  <ul>
+    <li>If <code>x</code> is less than 0 (<code>x &lt; 0</code>), it prints "x is negative".</li>
+    <li>If <code>x</code> is equal to 0 (<code>x == 0</code>), it prints "x is zero".</li>
+    <li>If neither of the above conditions is true (i.e., <code>x</code> is greater than 0), it prints "x is positive".</li>
+  </ul>
+</div>
+
+<div class="second-container">
+  <h1>Elif Statement</h1>
+  <p>
+    It executes a block of code if none of the preceding conditions are true.
+  </p>
+<pre class="lang-python"><code class="lang-python">x = -5
+if x > 0:
+print("x is positive")
+elif x == 0:
+print("x is zero")
+else:
+print("x is negative")
+
+#output: x is negative</code></pre>
+
+  <p>In this example:</p>
+  <ul>
+    <li>The variable <code>x</code> is assigned the value <code>-5</code>.</li>
+    <li>The first if condition checks if <code>x is greater than 0</code>, which is not true in this case.</li>
+    <li>The next elif condition checks if <code>x is equal to 0</code>, which is also not true.</li>
+    <li>Since neither the if nor the elif conditions are true, the <code>else</code> block is executed.</li>
+    <li>Therefore, the output will be: x is negative.</li>
+  </ul>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           

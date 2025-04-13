@@ -1,0 +1,57 @@
+{% extends 'student/base.html' %}
+{% load static %}
+
+{% block title %}
+  Student Home
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/student/student_home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-container">
+  <div class="secondary-container">
+  <div class="title-container">
+    <h1 class="title">CODEBILINGUAL</h1>
+    <h2>Explore the World of Programming</h2>
+    <p>Welcome back, {{ user.first_name }}! Choose from Code Translation, Lessons or Quizzes to elevate your coding skills!</p>
+  </div>
+
+  <div class="container">
+    <div class="rectangle-1">
+      <div class="front">
+        <div class="text-holder">
+          <a href="{% url 'translator:translate' %}"><button>Code Translation  <i class="fa-solid fa-arrow-right-long"></i></button></a>
+          <p>
+            Ever wish you could seamlessly switch between C++ and Python? Our code translation tool makes it possible! Just type your code in one language, hit translate, and watch it magically transform into the other. It's like having a language interpreter for programming - helping you understand both C++ and Python effortlessly!
+          </p>
+        </div>
+      </div>
+  </div>
+
+  <div class="rectangle-2">
+      <div class="front">
+        <div class="text-holder">
+          <a href="{% url 'student:select_language' %}"><button>Lessons  <i class="fa-solid fa-arrow-right-long"></i></button></a>
+          <p>
+            Step into the world of coding with our user-friendly lessons! Perfect for beginners, our lessons cover the essential basics of C++ and Python programming. Each lesson is carefully crafted with clear explanations and simple examples, guiding you through fundamental concepts at your own pace. Say hello to stress-free learning - where even the trickiest concepts become easy to grasp!
+          </p>
+        </div>
+      </div>
+  </div>
+
+  <div class="rectangle-3">
+      <div class="front">
+        <div class="text-holder">
+          <a href="#"><button>Quizzes <i class="fa-solid fa-arrow-right-long"></i></button></a>
+          <p>
+            Ready to put your skills to the test? Our quizzes are here to challenge you! After each lesson, take a quiz to see how much you've learned. It's like a friendly completition with yourself - and the best part? You'll get instant feedback to track your progress and improve your coding chops. Get ready to level up your skills - one at a time!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+{% endblock %}

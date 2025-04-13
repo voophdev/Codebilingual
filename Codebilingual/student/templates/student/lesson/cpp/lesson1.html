@@ -1,0 +1,70 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/cpp/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>{{ lesson.description }}</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>Single-Line Comments:</h1>
+  <p>
+    Single-line comments start with <code class="language-cpp">//</code> and extend until the end of the line. They are perfect for brief explanations or notes.
+  </p>
+
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+int main() {
+  //This is a single-line comment
+  std::count << "Hello, World!" << std:endl; // Output the greeting
+  return 0;
+}</code></pre>
+
+<pre class="lang-"><code class="lang-">OUTPUT:
+
+Hello, World!</code></pre>
+</div>
+
+<div class="second-container">
+  <h1>Multi-Line Comments:</h1>
+  <p>Multi-line comments begin with <code class="lang-cpp">/*</code> and ends with <code class="language-cpp">*/</code>. They can spam multiple lines and are useful for longer explanations.</p>
+<pre class="lang-cpp"><code class="lang-cpp">#include &lt;iostream&gt;
+
+/*
+This is a multi-line comment.
+It can be used for more detailed explanations.
+*/
+
+int main() {
+  std::count << "C++ is fun!" << std::endl;
+  return 0;
+}</code></pre>
+<pre class="lang-"><code class="lang">OUTPUT:
+
+C++ is fun!</code></pre>
+  <p class="note"><strong>NOTE:</strong> Use comments effectively to enhance the clarity and maintainability of your code. Strike a balance between proiding enough information without cluttering the code with excessive comments.</p>
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+
+
+           

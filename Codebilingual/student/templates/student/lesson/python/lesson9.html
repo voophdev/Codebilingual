@@ -1,0 +1,186 @@
+{% extends 'student/lesson/lesson_base.html' %}
+{% load static %}
+
+{% block title %}
+  {{ lesson.title }}
+{% endblock %}
+
+{% block style %}
+  <link rel="stylesheet" href="{% static 'css/lesson/py/lesson.css' %}">
+{% endblock %}
+
+{% block header %}
+  <p>{{ lesson.lesson }}</p>
+  <h1>{{ lesson.title }}</h1>
+{% endblock %}
+
+{% block description %}
+  <p>Looping in Python refers to the process of repeatedly executing a block of code multiple times. They enable efficient and organized handling of tasks that need to be performed repeatedly. Loops help streamline code by reducing redundancy and improving readability.</p>
+{% endblock %}
+
+{% block content %}
+<div class="second-container">
+  <h1>for loop</h1>
+  <p>
+    In Python, a <code>for</code> loop is used to iterate over a sequence (such as a list, tuple, string, or range) or any iterable object. It executes a block of code repeatedly for each item in the sequence, allowing you to perform operations on each element without the need for manual indexing.
+  </p>
+  <p>
+    The syntax of a for loop in Python is as follows:
+  </p>
+<pre class="lang-python"><code class="lang-python">for item in sequence:
+# do something with item
+}</code></pre>
+  <p>Example:</p>
+<pre class="lang-python"><code class="lang-python">fruits = ["apple", "banana", "cherry", "date"]
+
+for fruit in fruits:
+print(fruit)</code></pre>
+  <p>
+    Here's an explanation of each part of the for loop:
+  </p>
+  <ol>
+    <li><strong>Iterable:</strong> In this example, <code>fruits</code> is the iterable, which is a list containing different types of fruits.</li>
+    <li><strong>Loop Variable (<code>fruit</code>):</strong> <code>fruit</code> is the loop variable. During each iteration of the loop, it takes on the value of the current item in the <code>fruits</code> list.</li>
+    <li><strong>Loop Body:</strong> The loop body consists of the <code>print(fruit)</code> statement. This statement is executed for each item in the <code>fruits</code> list. During each iteration, it prints the value of the current fruit.</li>
+  </ul>
+  </ol>
+
+  <p>
+    The <code>for</code> loop iterates over each item in the <code>fruits</code> list, assigns the value of each item to the loop variable <code>fruit</code>, and executes the loop body for each item. This results in printing each fruit name on a separate line.
+  </p>
+</div>
+
+<div class="second-container">
+  <h1>Iterating Over a list</h1>
+  <p>Iterates over each item in a list and performs an action for each item.</p>
+
+  <div class="code-container">
+    <div class="input-container">
+<pre class="lang-python"><code class="lang-python"># Iterating over a list of numbers
+
+numbers = [1, 2, 3, 4, 5]
+for num in numbers:
+print(num)</code></pre>           
+    </div>
+    <div class="output-container">
+<pre class="lang-"><code class="lang-">Output:
+
+1
+2
+3
+4
+5</code></pre>         
+    </div>
+  </div>
+</div>
+
+<div class="second-container">
+  <h1>Iterating Over a String</h1>
+  <p>Iterates over each character in a string and performs an action for each character.</p>
+
+  <div class="code-container">
+    <div class="input-container">
+<pre class="lang-python"><code class="lang-python"># Iterating over a string
+message = "Hello"
+for char in message:
+print(char)</code></pre>           
+    </div>
+    <div class="output-container">
+<pre class="lang-"><code class="lang-">Output:
+
+H
+e
+l
+l
+o</code></pre>         
+    </div>
+  </div>
+</div>
+
+<div class="second-container">
+  <h1>Using Range with For Loop</h1>
+  <p>Iterates over a sequence of numbers using the <code>range()</code> function.</p>
+
+  <div class="code-container">
+    <div class="input-container">
+<pre class="lang-python"><code class="lang-python"># Using range to iterate over a sequence of numbers
+for i in range(5):
+print(i)</code></pre>           
+    </div>
+    <div class="output-container">
+<pre class="lang-"><code class="lang-">Output:
+
+0
+1
+2
+3
+4</code></pre>         
+    </div>
+  </div>
+</div>
+
+<div class="second-container">
+  <h1>Iterating Over Dictionary Items</h1>
+  <p>Iterates over key-value pairs in a dictionary and performs an action for each pair.</p>
+
+  <div class="code-container">
+    <div class="input-container">
+<pre class="lang-python"><code class="lang-python"># Iterating over dictionary keys and values
+
+student_grades = {"Alice": 85, "Bob": 90, "Charlie": 75}
+for name, grade in student_grades.items():
+print(f"{name}: {grade}")</code></pre>           
+    </div>
+    <div class="output-container">
+<pre class="lang-"><code class="lang-">Output:
+
+Alice: 85
+Bob: 90
+Charlie: 75</code></pre>         
+    </div>
+  </div>
+</div>
+
+<div class="second-container">
+  <h1>Using Else with For Loop</h1>
+  <p>Checks for the presence of an element in a list and executes an action accordingly.</p>
+
+  <div class="code-container">
+    <div class="input-container">
+<pre class="lang-python"><code class="lang-python"># Checking for the presence of an element in a list
+
+fruits = ["apple", "banana", "orange"]
+for fruit in fruits:
+if fruit == "banana":
+  print("Banana found!")
+  break
+else:
+print("Banana not found!")</code></pre>           
+    </div>
+    <div class="output-container">
+<pre class="lang-"><code class="lang-">Output:
+
+Banana found!</code></pre>         
+    </div>
+  </div>
+
+  <p>
+    Explanation:
+  </p>
+  <p>
+    This Python code defines a list of fruits. It iterates through each fruit in the list and checks if it's equal to <strong>banana</strong>. If a banana is found, it prints <strong>Banana found!</strong> and exits the loop using the <code>break</code> statement. If no banana is found after iterating through all fruits, it prints <strong>Banana not found!</strong>. In this specific case, since <strong>banana</strong> is in the list, it prints <strong>Banana found!</strong>. The <code>else</code> block is associated with the for loop and is executed if the loop completes without encountering a <code>break</code>.
+  </p>
+</div>
+
+<div class="note-container">
+  <strong>NOTE:</strong> Python for loops provide a simple and concise way to iterate over elements in a sequence or any iterable object, making them versatile for various programming tasks.
+</div>
+
+<div class="button-holder">
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Finish</button>
+  </form>
+</div>
+{% endblock %}
+           
