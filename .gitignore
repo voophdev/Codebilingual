@@ -2,3 +2,6 @@
 env/
 Codebilingual/static/js/translator/scripts/variables/variables.js
 Codebilingual/db.sqlite3
+/static
+__pycache__
+/venv
